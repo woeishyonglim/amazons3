@@ -1,0 +1,35 @@
+<div class="page-header">
+  <h1>Show Page Picture!</h1>
+  <ul class="actions">
+    <li><%= link_to fa_icon("plus") + " Add Picture", new_employee_path, class: "btn btn-primary" %></li>
+    <li><%= link_to fa_icon("plus") + " Return", new_employee_path, class: "btn btn-primary" %></li>
+  </ul>
+</div>
+
+<div class="container">
+  <br />
+  <br />
+  <div class="table-responsive">
+    <table class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th><span style="color:green">User Name</span></th>
+          <th><span style="color:green">picture Name</span></th>
+          <th><span style="color:green">Picture id</span></th>
+          <th><span style="color:green">Picture</span></th>
+          <th>&nbsp;</th>
+          <th>&nbsp;</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr>
+            <td><%= @picture.user_name %></td>
+            <td><%= @picture.pic_name %></td>
+            <td><%= @picture.id %></td>
+            <td><%= link_to image_tag(@picture.attachment_url(:thumb)), @picture.attachment_url %></td>
+            <td><%= link_to fa_icon("trash") + " Delete", employee_path(@picture), method: :delete, class: "btn btn-danger", data: {confirm: "Are you sure that you wish to delete #{@picture.pic_name}?"} %></td>
+          </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
