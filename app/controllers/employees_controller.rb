@@ -1,5 +1,5 @@
 class EmployeesController < ApplicationController
-
+  require 'open-uri'
   def index
     unless user_signed_in?
       redirect_to new_user_session_path
@@ -20,8 +20,20 @@ class EmployeesController < ApplicationController
     end
   end
 
+  def show_pic
+    @user = Picture.find(params[:id])
+    if (params[:op] == 'thumb')
+      @file = @user.attachment.url(:thumb)
+    else
+      @file = @user.attachment.url
+    end
+    @data = open(@file).read
+    send_data @data, :disposition => 'inline', :filename=>"photo.jpg"
+  end
+
   def show
     @picture = Picture.find(params[:id])
+
   end
 
   def destroy

@@ -7,6 +7,11 @@ Rails.application.routes.draw do
   root 'employees#index'
   resources :employees
 
+  scope :controller => :employees do
+    match 'show_pic' => :show_pic, via: [:get]
+  end
+
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

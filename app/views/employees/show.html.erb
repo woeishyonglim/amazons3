@@ -18,7 +18,6 @@
           <th><span style="color:green">Picture id</span></th>
           <th><span style="color:green">Picture</span></th>
           <th>&nbsp;</th>
-          <th>&nbsp;</th>
         </tr>
       </thead>
       <tbody>
@@ -26,7 +25,7 @@
             <td><%= @picture.user_name %></td>
             <td><%= @picture.pic_name %></td>
             <td><%= @picture.id %></td>
-            <td><%= link_to image_tag(@picture.attachment_url(:thumb)), @picture.attachment_url %></td>
+            <td><%= link_to image_tag(url_for(:controller => "employees", :action => "show_pic", :id => @picture.id, :op => 'thumb')), :action => "show_pic", :id => @picture.id  %></td>
             <td><%= link_to fa_icon("trash") + " Delete", employee_path(@picture), method: :delete, class: "btn btn-danger", data: {confirm: "Are you sure that you wish to delete #{@picture.pic_name}?"} %></td>
           </tr>
       </tbody>
