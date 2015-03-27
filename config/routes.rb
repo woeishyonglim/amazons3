@@ -9,6 +9,8 @@ Rails.application.routes.draw do
 
   scope :controller => :employees do
     match 'show_pic' => :show_pic, via: [:get]
+    match 'show_local_pic' => :show_local_pic, via: [:get]
+
   end
 
 

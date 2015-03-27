@@ -31,6 +31,11 @@ class EmployeesController < ApplicationController
     send_data @data, :disposition => 'inline', :filename=>"photo.jpg"
   end
 
+  def show_local_pic
+    send_file Rails.root.join('app', 'assets', 'images', 'photo.jpg'), :type => "image/jpeg", :disposition => "inline"
+  end
+
+
   def show
     @picture = Picture.find(params[:id])
 
