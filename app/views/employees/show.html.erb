@@ -17,7 +17,9 @@
           <th><span style="color:green">picture Name</span></th>
           <th><span style="color:green">Picture id</span></th>
           <th><span style="color:green">Picture</span></th>
+          <th><span style="color:green">Picture(2)</span></th>
           <th>&nbsp;</th>
+
         </tr>
       </thead>
       <tbody>
@@ -25,9 +27,10 @@
             <td><%= @picture.user_name %></td>
             <td><%= @picture.pic_name %></td>
             <td><%= @picture.id %></td>
-          <!--  <td><%= link_to image_tag(url_for(:controller => "employees", :action => "show_pic", :id => @picture.id, :op => 'thumb')), :action => "show_pic", :id => @picture.id  %></td>
-          -->
-            <td><%= link_to image_tag(@picture.attachment.url(:thumb)), @picture.attachment.url  %></td>
+       <!-- <td><%# link_to image_tag(url_for(:controller => "employees", :action => "show_pic", :id => @picture.id, :op => 'thumb')), :action => "show_pic", :id => @picture.id  %></td>
+       -->
+            <td><%= link_to "Download the pic first, then only stream", :action => "show_pic", :id => @picture.id  %></td>
+            <td><%= link_to "Direct S3 Link", @picture.attachment.url  %></td>
             <td><%= link_to fa_icon("trash") + " Delete", employee_path(@picture), method: :delete, class: "btn btn-danger", data: {confirm: "Are you sure that you wish to delete #{@picture.pic_name}?"} %></td>
           </tr>
       </tbody>

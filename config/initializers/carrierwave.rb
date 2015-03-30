@@ -8,7 +8,7 @@ CarrierWave.configure do |config|
   config.cache_dir = "#{Rails.root}/tmp/uploads"
   config.fog_directory  = 'woeishyong'
   config.fog_public = false
-  config.fog_authenticated_url_expiration = 10
+  config.fog_authenticated_url_expiration = 100
   config.fog_use_ssl_for_aws = true
 
 end

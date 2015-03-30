@@ -38,7 +38,6 @@ class EmployeesController < ApplicationController
 
   def show
     @picture = Picture.find(params[:id])
-
   end
 
   def destroy
