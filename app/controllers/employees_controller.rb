@@ -27,8 +27,7 @@ class EmployeesController < ApplicationController
     else
       @file = @user.attachment.url
     end
-    @data = open(@file).read
-    send_data @data, :disposition => 'inline', :filename=>"photo.jpg"
+    send_data open(@file).read, :disposition => 'inline', :filename=>"photo.jpg"
   end
 
   def show_local_pic
