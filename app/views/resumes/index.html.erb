@@ -3,8 +3,6 @@
   <ul class="actions">
     <li><%= link_to fa_icon("plus") + " Add Resume", new_user_resume_path, class: "btn btn-primary" %></li>
     <li><%= link_to fa_icon("arrow-left") + " Home Page", root_path, class: "btn btn-danger" %></li>
-    <li><%# link_to  "Local Picture", :action => "show_local_pic", class: "btn btn-primary" %></li>
-
   </ul>
 </div>
 
@@ -29,7 +27,9 @@
             <td><%= resume.user_id %></td>
             <td><%= resume.resume_name %></td>
             <td><%= link_to fa_icon("pencil") + " Show", user_resume_path(:id => resume.id), class: "btn btn-info" %></td>
-            <td><%= link_to fa_icon("trash") + " Delete", [@employee, resume], method: :delete, class: "btn btn-danger", data: {confirm: "Are you sure that you wish to delete #{resume.user_name}?"} %></td>
+            <td><%= link_to fa_icon("trash") + " Delete", [@employee, resume], method: :delete, class: "btn btn-danger",
+              data: {confirm: "Are you sure that you wish to delete Resume: #{resume.resume_name}?"} %>
+            </td>
           </tr>
         <% end %>
       </tbody>

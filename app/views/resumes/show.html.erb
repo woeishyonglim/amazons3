@@ -2,7 +2,6 @@
   <h1>Show Page for :  <%= @resume.resume_name %></h1>
   <ul class="actions">
     <li><%= link_to fa_icon("arrow-left") + " Previous Page", user_resumes_path(current_user), class: "btn btn-danger" %></li>
-    <li><%# link_to fa_icon("arrow-left") + " Homepage",employees_path, class: "btn btn-primary" %></li>
   </ul>
 </div>
 
@@ -19,7 +18,6 @@
           <th><span style="color:green">Resume - Download then stream</span></th>
           <th><span style="color:green">Resume - Direct S3 download</span></th>
           <th>&nbsp;</th>
-
         </tr>
       </thead>
       <tbody>
@@ -29,7 +27,9 @@
             <td><%= @resume.resume_name %></td>
             <td><%= link_to @resume_name, show_resume_path(:id => @resume.id)  %></td>
             <td><%= link_to @resume_name,  @resume.attachment.url  %></td>
-            <td><%= link_to fa_icon("trash") + " Delete", [@employee, @resume], method: :delete, class: "btn btn-danger", data: {confirm: "Are you sure that you wish to delete #{@resume.user_name}?"} %></td>
+            <td><%= link_to fa_icon("trash") + " Delete", [@employee, @resume], method: :delete, class: "btn btn-danger",
+              data: {confirm: "Are you sure that you wish to delete Resume: #{@resume.resume_name}?"} %>
+            </td>
           </tr>
       </tbody>
     </table>

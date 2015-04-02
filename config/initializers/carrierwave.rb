@@ -10,5 +10,4 @@ CarrierWave.configure do |config|
   config.fog_public = false
   config.fog_authenticated_url_expiration = 100
   config.fog_use_ssl_for_aws = true
-
 end

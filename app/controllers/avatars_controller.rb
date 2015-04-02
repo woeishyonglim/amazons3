@@ -1,20 +1,20 @@
 class AvatarsController < ApplicationController
   before_action :set_employee
+  before_action :find_avatar, only:[:show, :show_pic, :destroy]
 
   def new
     @avatar = @employee.avatars.build
   end
 
   def index
-    @avatar = Avatar.where(user_id: current_user)
+    @avatars = Avatar.where(user_id: current_user)
   end
 
   def create
     @avatar = @employee.avatars.build(avatar_params)
-
     if @avatar.save
       flash[:notice] = "Avatar has been created."
-      redirect_to root_path
+      redirect_to user_avatars_url
     else
       flash.now[:alert] = "Avatar has not been craeted."
       render "new"
@@ -22,27 +22,28 @@ class AvatarsController < ApplicationController
   end
 
   def show
-    @picture = Avatar.find(params[:id])
   end
 
   def show_pic
-    @user = Avatar.find(params[:id])
-    @avatar_name = @user.attachment.path.split("/").last
+    @avatar_name = @avatar.attachment.path.split("/").last
     if (params[:op] == 'thumb')
-      @file = @user.attachment.url(:thumb)
+      @file = @avatar.attachment.url(:thumb)
     else
-      @file = @user.attachment.url
+      @file = @avatar.attachment.url
     end
     send_data open(@file).read, :disposition => 'inline', :filename => @avatar_name
   end
 
   def destroy
-    @picture = Avatar.find(params[:id])
-    @picture.destroy
-    redirect_to user_avatars_url, alert: "The picture #{@picture.pic_name} has been deleted."
+    @avatar.destroy
+    redirect_to user_avatars_url, alert: "The avatar #{@avatar.pic_name} has been deleted."
   end
 
   private
+    def find_avatar
+      @avatar = Avatar.find(params[:id])
+    end
+
     def set_employee
       @employee = User.find(current_user)
     end

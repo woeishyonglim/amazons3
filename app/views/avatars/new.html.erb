@@ -1,14 +1,15 @@
 <div class="page-header">
-  <h1>Please enter your picture here!</h1>
-    <ul class="actions">
-      <li><%= link_to fa_icon("arrow-left") + " Previous Page", user_avatars_path(current_user), class: "btn btn-danger" %></li>
-    </ul>
+  <h1>Please enter your avatar here!</h1>
+  <ul class="actions">
+    <li><%= link_to fa_icon("arrow-left") + " Previous Page", user_avatars_path(current_user), class: "btn btn-danger" %></li>
+  </ul>
 </div>
 
 <%= simple_form_for [current_user, @avatar], :html => {:multipart => true} do |f| %>
   <p><%= f.input :pic_name %></p>
   <p><%= f.input :user_name %></p>
   <p><%= f.file_field :attachment %>
-    <small>We accept only Images with type: jpg jpeg gif png.</small></p>
+    <small>We accept only Images with type: jpg jpeg gif png.</small>
+  </p>
   <%= f.button :submit, 'Enter Picture', class: "btn-primary" %>
 <% end %>

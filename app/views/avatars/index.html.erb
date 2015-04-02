@@ -7,8 +7,8 @@
 </div>
 
 <div class="container">
-  <br />
-  <br />
+  <br  />
+  <br  />
   <div class="table-responsive">
     <table class="table table-bordered table-striped">
       <thead>
@@ -21,13 +21,13 @@
         </tr>
       </thead>
       <tbody>
-        <% @avatar.each do |picture| %>
+        <% @avatars.each do |picture| %>
           <tr>
             <td><%= picture.user_name %></td>
             <td><%= picture.pic_name %></td>
             <td><%= picture.user_id %></td>
             <td><%= link_to fa_icon("pencil") + " Show", user_avatar_path(:id => picture.id), class: "btn btn-info" %></td>
-            <td><%= link_to fa_icon("trash") + " Delete", [@employee, picture], method: :delete, class: "btn btn-danger", data: {confirm: "Are you sure that you wish to delete #{picture.pic_name}?"} %></td>
+            <td><%= link_to fa_icon("trash") + " Delete", [@employee, picture], method: :delete, class: "btn btn-danger", data: {confirm: "Are you sure that you wish to delete Avatar: #{picture.pic_name}?"} %></td>
           </tr>
         <% end %>
       </tbody>
