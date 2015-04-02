@@ -1,18 +1,25 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, :paths => 'accounts'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'employees#index'
-  resources :employees
+  root 'users#index'
+#  root 'users#index'
 
-  scope :controller => :employees do
-    match 'show_pic' => :show_pic, via: [:get]
-    match 'show_local_pic' => :show_local_pic, via: [:get]
-
+ resources :users do
+    resources :avatars
+    resources :resumes
   end
 
+  scope :controller => :avatars do
+    match 'show_pic' => :show_pic, via: [:get]
+    match 'show_local_pic' => :show_local_pic, via: [:get]
+  end
+
+  scope :controller => :resumes do
+    match 'show_resume' => :show_resume, via: [:get]
+  end
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

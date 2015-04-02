@@ -1,0 +1,37 @@
+<div class="page-header">
+  <h1>Show Page Picture!</h1>
+  <ul class="actions">
+    <li><%= link_to fa_icon("arrow-left") + " Previous Page", user_avatars_path(current_user), class: "btn btn-danger" %></li>
+    <li><%# link_to fa_icon("arrow-left") + " Homepage",employees_path, class: "btn btn-primary" %></li>
+  </ul>
+</div>
+
+<div class="container">
+  <br />
+  <br />
+  <div class="table-responsive">
+    <table class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th><span style="color:green">User Name</span></th>
+          <th><span style="color:green">Avatar Name</span></th>
+          <th><span style="color:green">Avatar id</span></th>
+          <th><span style="color:green">Avatar - Download then stream</span></th>
+          <th><span style="color:green">Avatar - Direct S3 download</span></th>
+          <th>&nbsp;</th>
+
+        </tr>
+      </thead>
+      <tbody>
+          <tr>
+            <td><%= @picture.user_name %></td>
+            <td><%= @picture.pic_name %></td>
+            <td><%= @picture.id %></td>
+            <td><%= link_to image_tag(url_for(:controller => "avatars", :action => "show_pic", :id => @picture.id, :op => 'thumb')), :action => "show_pic", :id => @picture.id  %></td>
+            <td><%= link_to image_tag(@picture.attachment.url(:thumb)),  @picture.attachment.url  %></td>
+            <td><%= link_to fa_icon("trash") + " Delete", [@employee, @picture], method: :delete, class: "btn btn-danger", data: {confirm: "Are you sure that you wish to delete #{@picture.pic_name}?"} %></td>
+          </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

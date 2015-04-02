@@ -28,6 +28,15 @@
         </ul>
 
         <% if user_signed_in? %>
+        <ul class="nav navbar-nav">
+          <li class="<%= "active" if current_page?("/users/#{current_user.id}/avatars") %>">
+            <%= link_to "Avatar", user_avatars_path(current_user) %>
+          </li>
+          <li class="<%= "active" if current_page?("/users/#{current_user.id}/resumes") %>">
+            <%= link_to "Resume", user_resumes_path(current_user) %>
+          </li>
+        </ul>
+
           <ul class="nav navbar-nav navbar-right">
             <li class="navbar-text">
               Signed in as <%= current_user.email %>
@@ -43,10 +52,14 @@
 
       <div class="container">
         <% flash.each do |key, message| %>
-          <div class="alert alert-<%= key %>">
-          <%= message %>
-      </div>
-        <% end %>
+          <div class="alert alert-<%= key %>  alert-dismissable">
+            <button type="button" class="close" data-dismiss="alert">
+              &times;
+            </button>
+            <%= message %>
+          </div>
+       <% end %>
   <%= yield %>
+  </div>
   </body>
 </html>
