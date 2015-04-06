@@ -1,3 +1,5 @@
+require 'benchmark'
+
 class ResumesController < ApplicationController
   before_action :set_employee
 
@@ -21,10 +23,10 @@ class ResumesController < ApplicationController
   end
 
   def show_resume
-    @resume = Resume.find(params[:id])
-    @resume_name = @resume.attachment.path.split("/").last
-    @file = @resume.attachment.url
-    send_data open(@file).read, :disposition => 'inline', :filename => @resume_name
+      @resume = Resume.find(params[:id])
+      @resume_name = @resume.attachment.path.split("/").last
+      @file = @resume.attachment.read
+      send_data @file, :disposition => 'inline', :filename => @resume_name
   end
 
   def show

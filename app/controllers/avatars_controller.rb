@@ -45,7 +45,7 @@ class AvatarsController < ApplicationController
     end
 
     def set_employee
-      @employee = User.find(current_user)
+      @employee = User.find(current_user.id)
     end
 
     def avatar_params
