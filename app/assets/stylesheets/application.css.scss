@@ -17,8 +17,136 @@
   @import "bootstrap";
   @import "font-awesome";
 
+  .bimage{
+    background-image: url("p1.jpeg");
+  }
+
+  /*.navbar-nav > li > a {padding-top:5px !important; padding-bottom:5px !important;}
+  .navbar-fixed-top  {padding-top:4px !important; padding-bottom:5px !important;}
+
+  .navbar-fixed-top {height:30px !important}
+*/
+
+  .html{
+    position: relative;
+
+  }
+
+
+  .navbar-default {
+    background-color: black;
+    opacity: 1;
+  }
+
+  .navbar-default .container .navbar-nav > li > a {
+    padding-top: 8px !important; padding-bottom: 8px !important;
+    color: white;
+  }
+
+  .navbar-default .container .navbar-brand{
+    padding-top: 2px;
+    height: 20px;
+    }
+
+
+
+  .navbar-default .container .navbar-nav .navbar-text  {
+    padding-top: 2px !important; padding-bottom: 1px !important;
+    margin-top: 6px !important;
+    margin-bottom: 6px !important;
+    font-style: italic;
+    color: white;
+  }
+
+  .navbar-default .container .navbar-nav >li > a:hover {
+    color: 	#ADD8E6;
+  }
+
+  .navbar-default .container .navbar-nav > .active > a{
+    color: 	#ADD8E6;
+    background-color: black;
+  }
+
+  .navbar-default .container .navbar-nav > .active > a:hover{
+    color: 	#ADD8E6;
+    background-color: black;
+  }
+
+
+  .pic {
+    width: 100%;
+    height: 100%;
+    left: 0;
+    color: white;
+    background: url(golden.jpeg);
+    background-size: cover;
+/*    background-color: #8B0000;*/
+    position: absolute;
+  }
+
+  .pic2{
+    width: 100%;
+    height: 50%;
+    left: 0;
+    position: absolute;
+    top: 100%;
+    color:  #8B0000;
+    background-color: 	#F5FFFA;
+  }
+
+  .pic3{
+    width: 50%;
+    height: 30%;
+    left: 0;
+    position: absolute;
+    top: 150%;
+    background-color: #8B0000;
+  }
+
+  .pic5{
+    width: 50%;
+    height: 30%;
+    left: 50%;
+    position: absolute;
+    top: 150%;
+    background-color:	#2F4F4F;
+  }
+
+  .word{
+    text-align: center;
+    position: relative;
+    margin-top: 10%;
+    margin-left: 20%;
+    color: 	#00008B;
+  }
+
+  .word2{
+    text-align: center;
+    position: relative;
+    margin-top: 5%;
+    color: #8B0000;
+  }
+
+  .word3{
+    text-align: center;
+    position: relative;
+    margin-top: 5%;
+    margin-left: 40%;
+    color: 	#FDF5E6;
+  }
+
+  .word5{
+    text-align: center;
+    position: relative;
+    margin-top: 5%;
+    margin-right: 40%;
+    color: #FDF5E6;
+  }
+
   .page-header {
     position: relative;
+    padding-top: 50px;
+
     padding-bottom: 5px;
     color: green;
     &:first-child {
@@ -27,10 +155,12 @@
   }
 
   body {
-    padding-top: 70px;
+    padding: 0px;
   }
 
   ul.actions {
+    padding-top: 70px;
+
     list-style-type: none;
     position: absolute;
     top: 4px;
@@ -40,13 +170,22 @@
     }
   }
 
+  ul.option{
+    top: 4px;
+    li{
+      display: inline-block;
+      padding: 40px;
+    }
+  }
+
   form {
     max-width: 500px;
   }
 
   .alert-notice {
     @extend .alert-success;
-    margin-top: 20px;
+    position: absolute;
+    margin-top: 200px;
   }
 
   .alert-alert {
@@ -54,11 +193,219 @@
     margin-top: 20px;
   }
 
-  .col-md-3 h2 {
-    font-size: 13px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    font-weight: bold;
-    color: #959595;
-    padding-left: 15px;
+  .btn-danger{
+    background-color: #8B0000;
+    border-color:  #8B0000;
+    border-radius: 24px;
+
+  }
+
+  .btn-danger:hover{
+    background-color: white;
+    color: #8B0000;
+    opacity: 0.5;
+  }
+
+
+
+ .option2 .btn-danger{
+     background-color: #FDF5E6;
+     border-color:  #FDF5E6;
+     border-radius: 24px;
+     color: #8B0000;
+     list-style-type: none;
+     margin-left: 30%;
+   }
+
+ .option2 .btn-danger:hover{
+     background-color: white;
+     color: #8B0000;
+     opacity: 0.5;
+   }
+
+   .option3 .btn-danger{
+       background-color: #FDF5E6;
+       border-color:  #FDF5E6;
+       border-radius: 24px;
+       color: #8B0000;
+       margin-left: 10%;
+       list-style-type: none;
+     }
+
+   .option3 .btn-danger:hover{
+       background-color: white;
+       color: #8B0000;
+       opacity: 0.5;
+     }
+
+
+ ul.option2{
+     top: 4px;
+     margin-right: 15%;
+     list-style-type: none;
+     text-align: right;
+
+     li{
+       padding: 1%;
+     }
+   }
+
+
+   ul.option3{
+       top: 4px;
+       list-style-type: none;
+       text-align: left;
+       li{
+         padding: 1%;
+       }
+     }
+
+
+
+
+
+
+
+
+  /* Style */
+
+  #mainwrapper {
+  	font: 12pt normal Arial, sans-serif;
+  	height: 70%;
+  	width: 100%;
+    left: 0;
+    position: absolute;
+    padding-left: 8%;
+    top: 180%;
+    background-color: 	#2F4F4F;
+  }
+
+  /* Image Box Style */
+  #mainwrapper .box {
+  	border: 2px solid #fff;
+  	cursor: pointer;
+  	height: 50%;
+    float: left;
+    margin-top: 15%;
+    margin-left: 8%;
+  	position: relative;
+  	overflow: hidden;
+  	width: 20%;
+  		-webkit-box-shadow: 1px 1px 1px 1px #ccc;
+  		-moz-box-shadow: 1px 1px 1px 1px #ccc;
+  		box-shadow: 1px 1px 1px 1px #ccc;
+  }
+
+  .word4{
+    color: white;
+    text-align: center;
+    position: absolute;
+    margin-left: 32%;
+    margin-top: 5%;
+  }
+  #mainwrapper .box img {
+    height: 100%;
+  	position: absolute;
+  	left: 0;
+  		-webkit-transition: all 300ms ease-out;
+  		-moz-transition: all 300ms ease-out;
+  		-o-transition: all 300ms ease-out;
+  		-ms-transition: all 300ms ease-out;
+  	transition: all 300ms ease-out;
+  }
+
+  /* Caption Common Style */
+  #mainwrapper .box .caption {
+  	background-color: rgba(0,0,0,0.8);
+  	position: absolute;
+    font-style: italic;
+  	z-index: 100;
+  		-webkit-transition: all 300ms ease-out;
+  		-moz-transition: all 300ms ease-out;
+  		-o-transition: all 300ms ease-out;
+  		-ms-transition: all 300ms ease-out;
+  		transition: all 300ms ease-out;
+  }
+
+
+
+  /** Caption 3: Fade **/
+  #mainwrapper .box .fade-caption, #mainwrapper .box .scale-caption  {
+  	opacity: 0;
+  	width: 440px;
+  	height: 380px;
+  	padding: 15px;
+  }
+
+
+
+  /** Caption 6: Scale **/
+  #mainwrapper .box .scale-caption h3, #mainwrapper .box .scale-caption p {
+  	position: relative;
+  	left: -200px;
+  	width: 170px;
+  	-webkit-transition: all 300ms ease-out;
+  	-moz-transition: all 300ms ease-out;
+  	-o-transition: all 300ms ease-out;
+  	-ms-transition: all 300ms ease-out;
+  	transition: all 300ms ease-out;
+  }
+
+  #mainwrapper .box .scale-caption h3 {
+    position: absolute;
+    margin-top: 5%;
+    margin-left: 20%;
+    text-align: center;
+    color: white;
+  	-webkit-transition-delay: 300ms;
+  	-moz-transition-delay: 300ms;
+  	-o-transition-delay: 300ms;
+  	-ms-transition-delay: 300ms;
+  	transition-delay: 300ms;
+  }
+
+  #mainwrapper .box .scale-caption p {
+    width: 70%;
+    position: absolute;
+    margin-left: 2%;
+    margin-top: 20%;
+    text-align: center;
+    color: white;
+  	-webkit-transition-delay: 500ms;
+  	-moz-transition-delay: 500ms;
+  	-o-transition-delay: 500ms;
+  	-ms-transition-delay: 500ms;
+  	transition-delay: 500ms;
+  }
+
+  /** Fade Caption :hover Behaviour **/
+  #mainwrapper .box:hover .fade-caption, #mainwrapper .box:hover .scale-caption  {
+  	opacity: 0.8;
+
+  }
+
+  /** Scale Caption :hover Behaviour **/
+  #mainwrapper .box:hover #image-6 {
+  	-moz-transform: scale(1.4);
+  	-o-transform: scale(1.4);
+  	-webkit-transform: scale(1.4);
+  	transform: scale(1.4);
+  }
+
+  #mainwrapper .box:hover .scale-caption h3, #mainwrapper .box:hover .scale-caption p {
+  	-moz-transform: translateX(200px);
+  	-o-transform: translateX(200px);
+  	-webkit-transform: translateX(200px);
+  	transform: translateX(200px);
+  }
+
+  #googleMap {
+    width: 100%;
+    height: 40%;
+    padding-top: 10%;
+    left: 0;
+    position: absolute;
+    top: 250%;
+    background-color: 	#F5FFFA;
+
   }

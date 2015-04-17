@@ -1,4 +1,96 @@
-<div class="page-header">
-  <h1>Main Page!</h1>
-  <h4>Hello <%= @user.email %></h4>
+<body>
+<div class="pic">
+  <div class="word">
+    <h1>
+      <strong>a <span style="color:#8B0000">BRIDGE</span> where talent meets passion.</strong>
+    </h1>
+    <ul class="option">
+      <li><%= link_to " Employer", root_path, class: "btn btn-danger btn-lg.round" %></li>
+      <li><%= link_to " Job Seeker", root_path, class: "btn btn-danger btn-lg.round" %></li>
+    </ul>
+  </div>
 </div>
+
+<div class="pic2">
+  <div class="word2">
+    <h1>
+      <strong>What we do?</strong>
+    </h1>
+    <h2>
+      Small team, big impacts.
+    </h2>
+  </div>
+</div>
+
+<div class="pic3">
+  <div class="word3">
+    <h3>
+      Looking for your next career move?
+    </h3>
+    <ul class="option2">
+      <li><%= link_to " Search for jobs ", root_path, class: "btn btn-danger btn-lg.round" %></li>
+      <li><%= link_to " Top tips for job seeker", root_path, class: "btn btn-danger btn-lg.round" %></li>
+      <li><%= link_to " Find out more", root_path, class: "btn btn-danger btn-lg.round" %></li>
+    </ul>
+  </div>
+</div>
+
+<div class="pic5">
+  <div class="word5">
+    <h3>
+      Looking to hire a new employee?
+    </h3>
+    <ul class="option3">
+      <li><%= link_to " Post your jobs ", root_path, class: "btn btn-danger btn-lg.round" %></li>
+      <li><%= link_to " Top tips for employer", root_path, class: "btn btn-danger btn-lg.round" %></li>
+      <li><%= link_to " Find out more", root_path, class: "btn btn-danger btn-lg.round" %></li>
+    </ul>
+
+</div>
+</div>
+
+
+
+<div id="mainwrapper">
+  <div class="word4">
+    <h1>
+      <strong>Who we are?</strong>
+    </h1>
+    <h2>
+      Small team, big impacts.
+    </h2>
+  </div>  <div id="box-6" class="box">
+    <img id="image-6" src="<%= asset_path( 't1.jpg' ) %>"  alt="img01" >
+    <span class="caption scale-caption">
+    <h3>Recruit 1</h3>
+    <p>Graduated from NUS. Scholar. Top Recruiter. Contact. Graduated from NUS. Scholar. Top Recruiter. Contact.</p>
+    </span>
+  </div>
+
+  <div id="box-6" class="box">
+    <img id="image-6" src="<%= asset_path( 't1.jpg' ) %>"  alt="img01" >
+    <span class="caption scale-caption">
+      <h3>Recruit 1</h3>
+      <p>Graduated from NUS. Scholar. Top Recruiter. Contact. Graduated from NUS. Scholar. Top Recruiter. Contact. </p>
+      </span>
+  </div>
+
+  <div id="box-6" class="box">
+    <img id="image-6" src="<%= asset_path( 't1.jpg' ) %>"  alt="img01" >
+    <span class="caption scale-caption">
+      <h3>Recruit 1</h3>
+      <p>Graduated from NUS. Scholar. Top Recruiter. Contact. </p>
+      </span>
+    </span>
+  </div>
+</div>
+
+<div id="googleMap">
+  <h1>TO DO: INCLUDE GOOGLE MAPS</h1>
+</div>
+
+
+
+
+
+</body>

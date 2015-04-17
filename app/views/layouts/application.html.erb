@@ -1,49 +1,46 @@
   <!DOCTYPE html>
   <html>
     <head>
-      <title>S3</title>
+      <title>My first application</title>
       <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
       <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
       <%= csrf_meta_tags %>
     </head>
+
     <body>
-      <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <nav class="nav navbar-default navbar-fixed-top navbar-static-top" role="navigation">
         <div class="container">
-          <div class="navbar-header">
-            <%= link_to "Aws S3", root_path, class: "navbar-brand" %>
-          </div>
+
+
+                          <a class="navbar-brand" href="#">
+                              <img src="http://placehold.it/150x50&text=Logo" alt="">
+                          </a>
+
+
           <ul class="nav navbar-nav">
             <li class="<%= "active" if current_page?("/") %>">
               <%= link_to "Home", root_path %>
             </li>
-            <% unless user_signed_in? %>
-              <li class="<%= "active" if current_page?("/users/sign_up") %>">
-                <%= link_to "Sign up", new_user_registration_path %>
-              </li>
-              <li class="<%= "active" if current_page?("/users/sign_in") %>">
-                <%= link_to "Sign in", new_user_session_path %>
-              </li>
-            <% end %>
           </ul>
 
           <% if user_signed_in? %>
-            <ul class="nav navbar-nav">
-              <li class="<%= "active" if current_page?("/users/#{current_user.id}/avatars") %>">
-                <%= link_to "Avatar", user_avatars_path(current_user) %>
-              </li>
-              <li class="<%= "active" if current_page?("/users/#{current_user.id}/resumes") %>">
-                <%= link_to "Resume", user_resumes_path(current_user) %>
-              </li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-              <li class="navbar-text">
-                Signed in as <%= current_user.email %>
-              </li>
-              <li>
-                <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
-              </li>
-            </ul>
-          <% end %>
+           <ul class="nav navbar-nav">
+             <li class="<%= "active" if current_page?("/users/#{current_user.id}/avatars") %>">
+               <%= link_to "Avatar", user_avatars_path(current_user) %>
+             </li>
+             <li class="<%= "active" if current_page?("/users/#{current_user.id}/resumes") %>">
+               <%= link_to "Resume", user_resumes_path(current_user) %>
+             </li>
+           </ul>
+           <ul class="nav navbar-nav navbar-right">
+             <li class="navbar-text">
+               Signed in as <%= current_user.email %>
+             </li>
+             <li>
+               <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+             </li>
+           </ul>
+         <% end %>
 ￼        </div>
       </nav>
 
@@ -58,5 +55,8 @@
         <% end %>
         <%= yield %>
       </div>
+
+
+
     </body>
   </html>
